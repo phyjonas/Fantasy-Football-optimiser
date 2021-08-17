@@ -1,12 +1,19 @@
-from MIP import optimiser
+import os.path
+import sys
+
+scr = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+       + '/scr/')
+sys.path.append(scr)
+
+from src.MIP import Optimiser
 
 
 def lineups(salary, projection, output, max_per_team, risk_missing, r,
             carry_over, n_lineups):
-    x = optimiser(salary, projection, output)
-    x.MIP(max_per_team, risk_missing, r)
+    x = Optimiser(salary, projection, output)
+    x.mip(max_per_team, risk_missing, r)
     for i in range(0, n_lineups):
-        x.solve(False)
+        x.solve()
         x.write_data(i)
         x.discard(carry_over)
 
