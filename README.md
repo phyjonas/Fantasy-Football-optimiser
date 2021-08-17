@@ -7,7 +7,7 @@ There is also a jupyter notebook explaining the logic and the most important ste
 The code needs refactoring, but so far I have been too lazy to do so.
 
 ## How to use
-Note: This whole process can automised if desired
+Note: This whole process can be automised if desired
 1. Download the projections
 2. Download the DrafKing Salaries (best to directly copy them)
 3. Run main.py with the chosen parameters
